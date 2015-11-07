@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="4">
+		<struct>
+			<and abstract="true" mandatory="true" name="ConfiguradorBicicleta">
+				<alt mandatory="true" name="tipo_bicicleta">
+					<description>
+						tipo_bicicleta-Tipo de bicicleta
+					</description>
+					<alt mandatory="true" name="montana">
+						<description>
+							montana-Montana-tieneImagen
+						</description>
+						<feature mandatory="true" name="rigida">
+							<description>
+								rigida-Rigida-tieneImagen
+							</description>
+						</feature>
+						<feature mandatory="true" name="suspension">
+							<description>
+								suspension-Suspension-tieneImagen
+							</description>
+						</feature>
+					</alt>
+					<alt mandatory="true" name="urbana">
+						<description>
+							urbana-Urbana-tieneImagen
+						</description>
+						<feature mandatory="true" name="plegable">
+							<description>
+								plegable-Plegable-tieneImagen
+							</description>
+						</feature>
+						<feature mandatory="true" name="urbana_estandar">
+							<description>
+								urbana_estandar-Urbana Estandar-tieneImagen
+							</description>
+						</feature>
+						<feature mandatory="true" name="electrica">
+							<description>
+								electrica-Electrica-tieneImagen
+							</description>
+						</feature>
+					</alt>
+					<alt mandatory="true" name="BMX">
+						<description>
+							BMX-BMX-tieneImagen
+						</description>
+						<feature mandatory="true" name="clasica">
+							<description>
+								clasica-Clasica-tieneImagen
+							</description>
+						</feature>
+						<feature mandatory="true" name="estilo_libre">
+							<description>
+								estilo_libre-Estilo libre-tieneImagen
+							</description>
+						</feature>
+					</alt>
+					<feature mandatory="true" name="infantil">
+						<description>
+							infantil-Infantil-tieneImagen
+						</description>
+					</feature>
+				</alt>
+				<alt mandatory="true" name="rueda">
+					<description>
+						rueda-Tipo de Rueda
+					</description>
+					<feature mandatory="true" name="doce">
+						<description>
+							doce-12-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="catorce">
+						<description>
+							catorce-14-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="diesiseis">
+						<description>
+							diesiseis-16-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="diesiocho">
+						<description>
+							diesiocho-18-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="veinte">
+						<description>
+							veinte-20-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="veinticuatro">
+						<description>
+							veinticuatro-24-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="veintiseis">
+						<description>
+							veintiseis-26-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="veintisieteMedio">
+						<description>
+							veintisieteMedio-27.5-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="veintinueve">
+						<description>
+							veintinueve-29-tieneImagen
+						</description>
+					</feature>
+				</alt>
+				<alt mandatory="true" name="material">
+					<description>
+						material-Tipo de Material
+					</description>
+					<feature mandatory="true" name="acero">
+						<description>
+							acero-Acero-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="aluminio">
+						<description>
+							aluminio-Aluminio-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="carbono">
+						<description>
+							carbono-Carbono-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="titanio">
+						<description>
+							titanio-Titanio-tieneImagen
+						</description>
+					</feature>
+				</alt>
+				<alt mandatory="true" name="color">
+					<description>
+						color-Color
+					</description>
+					<feature mandatory="true" name="color_estandar">
+						<description>
+							color_estandar-Color estandar-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="personalizado">
+						<description>
+							personalizado-Color personalizado-tieneImagen
+						</description>
+					</feature>
+				</alt>
+				<or name="accesorios_bicicleta">
+					<description>
+						accesorios_bicicleta-Accesorios
+					</description>
+					<feature mandatory="true" name="stow_bag">
+						<description>
+							stow_bag-Stow bag-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="tern_trolley_rack">
+						<description>
+							tern_trolley_rack-Tern trolley rack-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="cargador">
+						<description>
+							cargador-Cargador-tieneImagen
+						</description>
+					</feature>
+					<feature mandatory="true" name="caja_bateria">
+						<description>
+							caja_bateria-Caja bateria-tieneImagen
+						</description>
+					</feature>
+					<or mandatory="true" name="pedales">
+						<description>
+							pedales-Pedales-tieneImagen
+						</description>
+						<or mandatory="true" name="pedales_estandar">
+							<description>
+								pedales_estandar-Pedales estandar-tieneImagen
+							</description>
+							<feature mandatory="true" name="pedales_XLC_M01">
+								<description>
+									pedales_XLC_M01-Juego de pedales XLC M01-tieneImagen
+								</description>
+							</feature>
+							<feature mandatory="true" name="pedales_XLC_comfort_C03">
+								<description>
+									pedales_XLC_comfort_C03-Juego de pedales XLC comfort C03-tieneImagen
+								</description>
+							</feature>
+							<feature mandatory="true" name="pedales_exustar_EPR16">
+								<description>
+									pedales_exustar_EPR16-Juego de pedales exustar EPR16-tieneImagen
+								</description>
+							</feature>
+							<feature mandatory="true" name="pedales_exustar_EPR43">
+								<description>
+									pedales_exustar_EPR43-Juego de pedales exustar EPR43-tieneImagen
+								</description>
+							</feature>
+						</or>
+						<or mandatory="true" name="pedales_bmx">
+							<description>
+								pedales_bmx-Pedales BMX-tieneImagen
+							</description>
+							<feature mandatory="true" name="pedales_XLC_plataforma_azul">
+								<description>
+									pedales_XLC_plataforma_azul-Juego de pedales XLC plataforma azul-tieneImagen
+								</description>
+							</feature>
+							<feature mandatory="true" name="pedales_wellgo_plataforma_313_negros">
+								<description>
+									pedales_wellgo_plataforma_313_negros-Juego de pedales wellgo plataforma 313 negros-tieneImagen
+								</description>
+							</feature>
+							<feature mandatory="true" name="pedales_BBB_bigfeet">
+								<description>
+									pedales_BBB_bigfeet-Juego de pedales BBB bigfeet-tieneImagen
+								</description>
+							</feature>
+							<feature mandatory="true" name="pedales_onoff_claw_blanco">
+								<description>
+									pedales_onoff_claw_blanco-Juego de pedales onoff claw blanco-tieneImagen
+								</description>
+							</feature>
+						</or>
+					</or>
+					<or mandatory="true" name="luces">
+						<description>
+							luces-Luces-tieneImagen
+						</description>
+						<feature mandatory="true" name="delanteras">
+							<description>
+								delanteras-Luces delanteras-tieneImagen
+							</description>
+						</feature>
+						<feature mandatory="true" name="traseras">
+							<description>
+								traseras-Luces traseras-tieneImagen
+							</description>
+						</feature>
+						<feature mandatory="true" name="kit_luces">
+							<description>
+								kit_luces-Kit de luces-tieneImagen
+							</description>
+						</feature>
+					</or>
+				</or>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>montana</var>
+					<not>
+						<disj>
+							<var>doce</var>
+							<disj>
+								<var>catorce</var>
+								<disj>
+									<var>diesiseis</var>
+									<disj>
+										<var>diesiocho</var>
+										<disj>
+											<var>veinte</var>
+											<var>veinticuatro</var>
+										</disj>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>urbana_estandar</var>
+					<not>
+						<disj>
+							<var>doce</var>
+							<disj>
+								<var>catorce</var>
+								<disj>
+									<var>diesiseis</var>
+									<disj>
+										<var>diesiocho</var>
+										<disj>
+											<var>veinte</var>
+											<disj>
+												<var>veinticuatro</var>
+												<disj>
+													<var>veintisieteMedio</var>
+													<var>veintinueve</var>
+												</disj>
+											</disj>
+										</disj>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>plegable</var>
+					<not>
+						<disj>
+							<var>doce</var>
+							<disj>
+								<var>catorce</var>
+								<disj>
+									<var>diesiseis</var>
+									<disj>
+										<var>diesiocho</var>
+										<disj>
+											<var>veintiseis</var>
+											<disj>
+												<var>veintisieteMedio</var>
+												<var>veintinueve</var>
+											</disj>
+										</disj>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>electrica</var>
+					<not>
+						<disj>
+							<var>doce</var>
+							<disj>
+								<var>catorce</var>
+								<disj>
+									<var>diesiseis</var>
+									<disj>
+										<var>veinticuatro</var>
+										<disj>
+											<var>veintiseis</var>
+											<disj>
+												<var>veintisieteMedio</var>
+												<var>veintinueve</var>
+											</disj>
+										</disj>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>BMX</var>
+					<not>
+						<disj>
+							<var>doce</var>
+							<disj>
+								<var>catorce</var>
+								<disj>
+									<var>diesiseis</var>
+									<disj>
+										<var>diesiocho</var>
+										<disj>
+											<var>veinticuatro</var>
+											<disj>
+												<var>veintiseis</var>
+												<disj>
+													<var>veintisieteMedio</var>
+													<var>veintinueve</var>
+												</disj>
+											</disj>
+										</disj>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>infantil</var>
+					<not>
+						<disj>
+							<var>veintiseis</var>
+							<disj>
+								<var>veintisieteMedio</var>
+								<var>veintinueve</var>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>montana</var>
+					<not>
+						<var>personalizado</var>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>BMX</var>
+					<not>
+						<var>personalizado</var>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>plegable</var>
+					<not>
+						<disj>
+							<var>acero</var>
+							<var>aluminio</var>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>BMX</var>
+					<not>
+						<disj>
+							<var>acero</var>
+							<var>titanio</var>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>montana</var>
+					<not>
+						<disj>
+							<var>stow_bag</var>
+							<disj>
+								<var>tern_trolley_rack</var>
+								<disj>
+									<var>cargador</var>
+									<disj>
+										<var>caja_bateria</var>
+										<var>pedales_bmx</var>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>plegable</var>
+					<not>
+						<disj>
+							<var>cargador</var>
+							<disj>
+								<var>caja_bateria</var>
+								<var>pedales</var>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>urbana_estandar</var>
+					<not>
+						<disj>
+							<var>stow_bag</var>
+							<disj>
+								<var>tern_trolley_rack</var>
+								<disj>
+									<var>cargador</var>
+									<disj>
+										<var>caja_bateria</var>
+										<var>pedales_bmx</var>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>electrica</var>
+					<not>
+						<disj>
+							<var>stow_bag</var>
+							<disj>
+								<var>tern_trolley_rack</var>
+								<var>pedales</var>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>BMX</var>
+					<not>
+						<disj>
+							<var>stow_bag</var>
+							<disj>
+								<var>tern_trolley_rack</var>
+								<disj>
+									<var>cargador</var>
+									<disj>
+										<var>caja_bateria</var>
+										<var>pedales_estandar</var>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>infantil</var>
+					<not>
+						<disj>
+							<var>stow_bag</var>
+							<disj>
+								<var>tern_trolley_rack</var>
+								<disj>
+									<var>cargador</var>
+									<disj>
+										<var>caja_bateria</var>
+										<var>pedales</var>
+									</disj>
+								</disj>
+							</disj>
+						</disj>
+					</not>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

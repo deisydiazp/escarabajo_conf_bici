@@ -1,0 +1,163 @@
+@(carac:Application.Caracteristica,
+	restric: String)
+
+@import helper._;
+
+@main("Configurador bicicleta") {
+
+<script type="text/javascript">
+	
+	var cadJson;
+	var restricciones;
+	
+	$(document).ready(function(){	
+		$('.nivel3').hide();
+		$('.nivel4').hide();
+		cadJson = '@restric'.replace(/&quot;/g, '"');
+		restricciones = JSON.parse(cadJson);
+		//console.log(restricciones);
+	});
+	
+	function detalleCaracteristica(nombreCaracteristica, nivel)
+	{
+		if($('#div_'+nombreCaracteristica+' div').length==0){
+			var ruta=$('#'+nombreCaracteristica).attr('ruta')+'/'+nombreCaracteristica;
+			var niveles=ruta.split('/');
+			$('#seleccion_'+niveles[0]).val(ruta);
+			var parent=$('#'+nombreCaracteristica).parent();
+			if(nivel == 2){
+				var nivel2 = $('#'+parent.attr('id')+' .nivel2');
+				for(var i = 0; i< nivel2.length; i++){
+					mostrarCaracteristricas($(nivel2[i]).attr('id'), true);
+				}
+			}else if(nivel == 3){
+				var nivel3 = $('#'+parent.attr('id')+' .nivel3');
+				for(var i = 0; i< nivel3.length; i++){
+					mostrarCaracteristricas($(nivel3[i]).attr('id'), true);
+				}
+			}else if(nivel == 4){
+				var nivel4 = $('#'+parent.attr('id')+' .nivel4');
+				for(var i = 0; i< nivel4.length; i++){
+					mostrarCaracteristricas($(nivel4[i]).attr('id'), true);
+				}
+			}
+			
+		}else{
+			if(nivel==2){
+				var parent=$('#'+nombreCaracteristica).parent();
+				
+				var nivel2 = $('#'+parent.attr('id')+' .nivel2');
+				for(var i = 0; i< nivel2.length; i++){
+					mostrarCaracteristricas($(nivel2[i]).attr('id'), true);
+				}
+				
+				var nivel3 = $('#'+parent.attr('id')+' .nivel3');
+				for(var i = 0; i< nivel3.length; i++){
+					mostrarCaracteristricas($(nivel3[i]).attr('id'), true);
+					$(nivel3[i]).hide();
+				}
+				
+				var nivel4 = $('#'+parent.attr('id')+' .nivel4');
+				for(var i = 0; i< nivel4.length; i++){
+					mostrarCaracteristricas($(nivel4[i]).attr('id'), true);
+					$(nivel4[i]).hide();
+				}
+				
+				$('#div_'+nombreCaracteristica+' .nivel3').show();
+			}else if(nivel==3){
+				var parent=$('#'+nombreCaracteristica).parent();
+				
+				var nivel3 = $('#'+parent.attr('id')+' .nivel3');
+				for(var i = 0; i< nivel3.length; i++){
+					mostrarCaracteristricas($(nivel3[i]).attr('id'), true);
+				}
+				
+				var nivel4 = $('#'+parent.attr('id')+' .nivel4');
+				for(var i = 0; i< nivel4.length; i++){
+					mostrarCaracteristricas($(nivel4[i]).attr('id'), true);
+					$(nivel4[i]).hide();
+				}
+				
+				
+				$('#div_'+nombreCaracteristica+' .nivel4').show();
+			}
+		}
+		mostrarCaracteristricas(nombreCaracteristica, false);
+	}
+
+	function mostrarCaracteristricas(nombreCaracteristica, show){
+
+		for(var i = 0; i < restricciones.length; i++){
+			if(restricciones[i].aplicaA == nombreCaracteristica){
+				var listRestricciones = restricciones[i].noImplica;
+				for(var j = 0; j < listRestricciones.length; j++)
+					if(show){
+						$('#'+listRestricciones[j]).show();
+					}else{
+						$('#'+listRestricciones[j]).hide();
+					}
+			}	
+		}
+		
+		
+	}
+	
+</script>
+	
+   @for(nivel1 <- carac.getCaracteristicas()) {
+		<div class="panel panel-primary" >
+		  <div class="panel-heading">
+		    <h3 class="panel-title">@nivel1.getTitulo()</h3>
+		  </div>
+		  <div class="panel-body" id="@nivel1.getNombre()">
+		      @for(nivel2 <- nivel1.getCaracteristicas()) {
+			  	<div id="@nivel2.getNombre()" class="nivel2" ruta="@nivel1.getNombre()"> 
+					@for(img <- nivel2.getImagenes()){
+						<div style="padding:10px">
+							<input type="image" src="@img" onclick="detalleCaracteristica('@nivel2.getNombre()',2);return false;">
+						</div>	
+					}
+					<div id="div_@nivel2.getNombre()">
+				  		@for(nivel3 <- nivel2.getCaracteristicas()) {
+					  		<div id="@nivel3.getNombre()" style="float:left" ruta="@nivel1.getNombre()/@nivel2.getNombre()"  class="nivel3"> 
+								@for(img <- nivel3.getImagenes()){
+									<div style="padding:10px">
+										<input type="image" src="@img" onclick="detalleCaracteristica('@nivel3.getNombre()',3);return false;">
+									</div>	
+								}		
+								<div id="div_@nivel3.getNombre()">
+							  		@for(nivel4 <- nivel3.getCaracteristicas()) {
+							  			<div id="@nivel4.getNombre()" style="float:left" ruta="@nivel1.getNombre()/@nivel2.getNombre()/@nivel3.getNombre()"  class="nivel4"> 
+											@for(img <- nivel4.getImagenes()){
+												<div style="padding:10px">
+													<input type="image" src="@img" width="200px" height="200px" onclick="detalleCaracteristica('@nivel4.getNombre()',4);return false;">
+												</div>	
+											}		
+										</div>
+							  		}
+						  		</div>
+					  		</div>
+					  	}
+				  	</div>		
+				
+				
+				
+				
+				</div>
+			  }
+			  <div class="row">
+				<input type="text" class="seleccion form-control" id="seleccion_@nivel1.getNombre()" readonly="readonly"/>			  
+			  </div>
+
+		  </div>
+		</div>
+	}
+	
+	<div class="btn-group btn-group-lg" role="group">
+		<button type="button" class="btn btn-primary">Enviar Selecci&oacute;n</button>
+	</div>
+	
+}
+
+
+	
